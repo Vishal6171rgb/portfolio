@@ -12,6 +12,46 @@ body {
     color: white;
 }
 
+/* ================= THEME SWITCH ================= */
+
+#theme-toggle {
+    display: none;
+}
+
+/* SWITCH DESIGN */
+.switch {
+    width: 50px;
+    height: 26px;
+    background: #0f172a;
+    border-radius: 20px;
+    position: relative;
+    cursor: pointer;
+}
+
+.slider {
+    width: 20px;
+    height: 20px;
+    background: #8b5cf6;
+    border-radius: 50%;
+    position: absolute;
+    top: 3px;
+    left: 4px;
+    transition: 0.3s;
+}
+
+/* MOVE SLIDER */
+#theme-toggle:checked + header .slider {
+    transform: translateX(24px);
+    background: #facc15;
+}
+
+/* LIGHT MODE */
+#theme-toggle:checked ~ header,
+#theme-toggle:checked ~ .home {
+    background: #ffffff;
+    color: black;
+}
+
 /* ================= NAVBAR ================= */
 
 .navbar {
@@ -19,7 +59,6 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 20px 60px;
-    background: #020617;
     border-bottom: 1px solid rgba(255,255,255,0.08);
     position: relative;
 }
@@ -28,14 +67,19 @@ body {
     color: #8b5cf6;
     font-size: 24px;
     font-weight: 700;
+    transition: 0.3s;
 }
 
-/* HIDE CHECKBOX */
+.logo:hover {
+    color: #a78bfa;
+    transform: scale(1.05);
+}
+
+/* MENU */
 #menu-toggle {
     display: none;
 }
 
-/* MENU ICON */
 .menu-icon {
     display: none;
     font-size: 24px;
@@ -50,21 +94,22 @@ body {
 }
 
 .nav-links a {
+    display: inline-block;
+    padding: 8px 12px;
     text-decoration: none;
-    color: #cbd5f5;
-    transition: 0.3s;
+    transition: 0.3s;    
 }
 
 .nav-links a:hover {
     color: #a78bfa;
-    transform: scale(1.05);
+    transform: scale(1.1);
 }
 
-.toggle {
-    background: #0f172a;
-    padding: 8px 12px;
-    border-radius: 8px;
+.nav-links a:focus{
+    color: #a78bfa;
+    transform: scale(1.1);
 }
+
 
 /* ================= HOME ================= */
 
@@ -79,15 +124,12 @@ body {
     background: radial-gradient(circle at right, rgba(139,92,246,0.15), transparent 40%);
 }
 
-/* LEFT */
 .home-text {
     max-width: 500px;
 }
 
 .home-text h1 {
     font-size: 60px;
-    font-weight: 700;
-    line-height: 1.1;
     margin-bottom: 10px;
 }
 
@@ -100,7 +142,6 @@ body {
     margin-bottom: 15px;
 }
 
-/* BUTTON */
 .btn {
     display: inline-block;
     padding: 10px 20px;
@@ -110,37 +151,28 @@ body {
     text-decoration: none;
     margin-top: 10px;
     transition: 0.3s;
-    box-shadow: 0 0 15px rgba(139,92,246,0.5);
 }
 
 .btn:hover {
     background: #a78bfa;
+    transform: scale(1.05);
 }
 
-/* SOCIAL */
 .social {
     margin-top: 15px;
 }
 
 .social a {
-    display: inline-block;
     margin-right: 10px;
     padding: 8px;
     border-radius: 50%;
     background: #0f172a;
     color: #a78bfa;
     text-decoration: none;
-    transition: 0.3s;
-}
-
-.social a:hover {
-    background: #8b5cf6;
-    color: white;
 }
 
 /* IMAGE */
 .home-img {
-    flex: 1;
     display: flex;
     justify-content: center;
 }
@@ -161,16 +193,11 @@ body {
     100% { transform: translateY(0); }
 }
 
+
 /* ================= TABLET ================= */
 @media (max-width: 1024px) {
-
-    .navbar {
-        padding: 20px 40px;
-    }
-
     .home {
         padding: 60px 40px;
-        gap: 30px;
     }
 
     .home-text h1 {
@@ -178,8 +205,8 @@ body {
     }
 
     .profile {
-        width: 220px;
-        height: 220px;
+        width: 200px;
+        height: 200px;
     }
 }
 
@@ -188,18 +215,15 @@ body {
 
     .navbar {
         padding: 15px 20px;
-        position: relative;
     }
 
-    /* MENU ICON → RIGHT */
+    /* MENU RIGHT */
     .menu-icon {
         display: block;
         position: absolute;
         right: 20px;
-        top: 18px;
     }
 
-    /* NAV LINKS DROPDOWN */
     .nav-links {
         position: absolute;
         top: 70px;
@@ -215,19 +239,16 @@ body {
         display: flex;
     }
 
-    /* MOVE TOGGLE BELOW NAVBAR */
-    .toggle {
+    /* SWITCH CENTER */
+    .switch {
         display: block;
-        margin: 10px auto;   /* centers it */
-        width: fit-content;
+        margin: 10px auto;
     }
 
-    /* HOME FIX */
     .home {
         flex-direction: column;
         text-align: center;
         padding: 60px 20px;
-        gap: 30px;
     }
 
     .home-text h1 {
@@ -237,10 +258,5 @@ body {
     .profile {
         width: 170px;
         height: 170px;
-    }
-
-    .social {
-        display: flex;
-        justify-content: center;
     }
 }

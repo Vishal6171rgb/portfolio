@@ -13,13 +13,16 @@
 
 <body>
 
+<!-- THEME TOGGLE -->
+<input type="checkbox" id="theme-toggle">
+
 <!-- ================= HEADER ================= -->
 <header>
     <nav class="navbar">
 
         <h2 class="logo">{VD}</h2>
 
-        <!-- HAMBURGER (NO JS) -->
+        <!-- MENU (NO JS) -->
         <input type="checkbox" id="menu-toggle">
         <label for="menu-toggle" class="menu-icon">&#9776;</label>
 
@@ -33,7 +36,10 @@
             <li><a href="#contact">Contact</a></li>
         </ul>
 
-        <div class="toggle">🌙</div>
+        <!-- SWITCH TOGGLE -->
+        <label for="theme-toggle" class="switch">
+            <span class="slider"></span>
+        </label>
 
     </nav>
 </header>
@@ -41,7 +47,6 @@
 <!-- ================= HOME ================= -->
 <section id="home" class="home">
 
-    <!-- LEFT -->
     <div class="home-text">
         <h1>Hi, I'm <span>Vishal</span></h1>
         <p class="role">Web Developer | Fitness Enthusiast</p>
@@ -56,9 +61,8 @@
         </div>
     </div>
 
-    <!-- RIGHT -->
     <div class="home-img">
-        <img src="images/profile.jpg" class="profile">
+        <img src="https://img.freepik.com/free-photo/young-handsome-man-wearing-casual-tshirt-blue-background-happy-face-smiling-with-crossed-arms-looking-camera-positive-person_839833-12963.jpg?semt=ais_hybrid&w=740&q=80" class="profile">
     </div>
 
 </section>
