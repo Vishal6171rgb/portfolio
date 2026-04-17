@@ -1,29 +1,48 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY */
 body {
     font-family: 'Poppins', sans-serif;
+    background: #020617;
+    color: white;
 }
+
+/* ================= NAVBAR ================= */
 
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 40px;
-    background:  #020617;
-    color: white;
-    position: sticky;
-    top: 0;
+    padding: 20px 60px;
+    background: #020617;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    position: relative;
 }
 
 .logo {
-    font-size: 24px;
-    font-weight: bold;
     color: #8b5cf6;
+    font-size: 24px;
+    font-weight: 700;
 }
 
-.logo:hover {
-    color: #a78bfa;
-    transform: scale(1.1);
+/* HIDE CHECKBOX */
+#menu-toggle {
+    display: none;
 }
 
+/* MENU ICON */
+.menu-icon {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* NAV LINKS */
 .nav-links {
     display: flex;
     gap: 25px;
@@ -32,25 +51,196 @@ body {
 
 .nav-links a {
     text-decoration: none;
-    color: white;
+    color: #cbd5f5;
     transition: 0.3s;
-    display: inline-block;
 }
 
 .nav-links a:hover {
     color: #a78bfa;
-    transform: scale(1.1);
-}
-
-.nav-links a:focus{
-    color: #a78bfa;
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 .toggle {
-    font-size: 20px;
-    cursor: pointer;
     background: #0f172a;
     padding: 8px 12px;
     border-radius: 8px;
+}
+
+/* ================= HOME ================= */
+
+.home {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 90vh;
+    padding: 80px 60px;
+    gap: 40px;
+
+    background: radial-gradient(circle at right, rgba(139,92,246,0.15), transparent 40%);
+}
+
+/* LEFT */
+.home-text {
+    max-width: 500px;
+}
+
+.home-text h1 {
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 10px;
+}
+
+.home-text span {
+    color: #8b5cf6;
+}
+
+.role {
+    color: #a78bfa;
+    margin-bottom: 15px;
+}
+
+/* BUTTON */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #8b5cf6;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    margin-top: 10px;
+    transition: 0.3s;
+    box-shadow: 0 0 15px rgba(139,92,246,0.5);
+}
+
+.btn:hover {
+    background: #a78bfa;
+}
+
+/* SOCIAL */
+.social {
+    margin-top: 15px;
+}
+
+.social a {
+    display: inline-block;
+    margin-right: 10px;
+    padding: 8px;
+    border-radius: 50%;
+    background: #0f172a;
+    color: #a78bfa;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.social a:hover {
+    background: #8b5cf6;
+    color: white;
+}
+
+/* IMAGE */
+.home-img {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.profile {
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 25px rgba(139,92,246,0.6);
+    animation: float 3s ease-in-out infinite;
+}
+
+/* ANIMATION */
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+    100% { transform: translateY(0); }
+}
+
+/* ================= TABLET ================= */
+@media (max-width: 1024px) {
+
+    .navbar {
+        padding: 20px 40px;
+    }
+
+    .home {
+        padding: 60px 40px;
+        gap: 30px;
+    }
+
+    .home-text h1 {
+        font-size: 48px;
+    }
+
+    .profile {
+        width: 220px;
+        height: 220px;
+    }
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 600px) {
+
+    .navbar {
+        padding: 15px 20px;
+        position: relative;
+    }
+
+    /* MENU ICON → RIGHT */
+    .menu-icon {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 18px;
+    }
+
+    /* NAV LINKS DROPDOWN */
+    .nav-links {
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        background: #0f172a;
+        flex-direction: column;
+        padding: 15px;
+        border-radius: 10px;
+        display: none;
+    }
+
+    #menu-toggle:checked ~ .nav-links {
+        display: flex;
+    }
+
+    /* MOVE TOGGLE BELOW NAVBAR */
+    .toggle {
+        display: block;
+        margin: 10px auto;   /* centers it */
+        width: fit-content;
+    }
+
+    /* HOME FIX */
+    .home {
+        flex-direction: column;
+        text-align: center;
+        padding: 60px 20px;
+        gap: 30px;
+    }
+
+    .home-text h1 {
+        font-size: 34px;
+    }
+
+    .profile {
+        width: 170px;
+        height: 170px;
+    }
+
+    .social {
+        display: flex;
+        justify-content: center;
+    }
 }

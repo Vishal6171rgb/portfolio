@@ -3,30 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vishal | Fullstack Developer Portfolio</title>
+    <title>Vishal Portfolio</title>
+
     <link rel="stylesheet" href="portfolio.css">
+
+    <!-- FONT -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <header>
-        <nav class="navbar">
 
-            <!-- LOGO -->
-            <h2 class="logo">{VD}</h2>
+<!-- ================= HEADER ================= -->
+<header>
+    <nav class="navbar">
 
-            <!-- NAV LINKS -->
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+        <h2 class="logo">{VD}</h2>
 
-            <!-- STATIC TOGGLE -->
-            <div class="toggle">🌙</div>
+        <!-- HAMBURGER (NO JS) -->
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">&#9776;</label>
 
-        </nav>
-    </header>
+        <!-- NAV LINKS -->
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <div class="toggle">🌙</div>
+
+    </nav>
+</header>
+
+<!-- ================= HOME ================= -->
+<section id="home" class="home">
+
+    <!-- LEFT -->
+    <div class="home-text">
+        <h1>Hi, I'm <span>Vishal</span></h1>
+        <p class="role">Web Developer | Fitness Enthusiast</p>
+
+        <a href="resume.pdf" class="btn">Download Resume</a>
+
+        <div class="social">
+            <a href="#">G</a>
+            <a href="#">L</a>
+            <a href="#">I</a>
+            <a href="#">T</a>
+        </div>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="home-img">
+        <img src="images/profile.jpg" class="profile">
+    </div>
+
+</section>
+
 </body>
 </html>
